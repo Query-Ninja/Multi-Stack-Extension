@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Multi Copy Paste Stack",
+  "version": "1.4",
+  "description": "Copy multiple items and paste them together with Ctrl+Shift+V",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "View Clipboard Stack",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ],
+  "commands": {
+    "paste-all": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+V",
+        "mac": "Command+Shift+V"
+      },
+      "description": "Paste all copied items"
+    }
+  }
+}

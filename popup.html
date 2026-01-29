@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        width: 280px;
+        padding: 10px;
+        font-family: sans-serif;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      #list {
+        border-top: 1px solid #eee;
+      }
+      .item {
+        padding: 8px;
+        font-size: 12px;
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      #clearBtn {
+        cursor: pointer;
+        background: #ff4757;
+        color: white;
+        border: none;
+        padding: 4px 8px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <strong>My Stack</strong>
+      <button id="clearBtn">Clear</button>
+    </div>
+    <div id="list"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
